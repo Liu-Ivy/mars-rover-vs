@@ -7,7 +7,6 @@ var rover = {
   y: 0,
   travelLog: [],
 };
-console.log("Initial position of Rover is: ", [rover.x,rover.y]);
 
 // iteration 2
 
@@ -26,7 +25,7 @@ function turnLeft(rover){
     case 'E':
       rover.direction = 'N';
       break;
-  }console.log("turnLeft was called!");
+  }
 }
 
 function turnRight(rover){
@@ -43,7 +42,7 @@ function turnRight(rover){
     case 'W':
       rover.direction = 'N';
       break;
-  }console.log("turnRight was called!");
+  }
 }
 
 // iteration 3
@@ -56,12 +55,12 @@ function moveForward(rover){
     rover.y += 1;
   } else {
     rover.x -= 1;
-  }console.log("Rover moved forward!");
+  }
 };
 
 //iteration 4
 function command(stringOfCommands){
-  for ( var i = 0; i < stringOfCommands.length; i++){
+  for (var i = 0; i < stringOfCommands.length; i++){
     var theCommands = stringOfCommands[i];
     switch (theCommands){
       case "f":
@@ -77,8 +76,7 @@ function command(stringOfCommands){
         turnLeft(rover);
         break;
       default:
-        console.log(stringOfCommands[i]+"is not right!");  
-    }}console.log('Travel log: ' + rover.travelLog);
+    }}
 }
 command(rffrfflfrff);
 
@@ -86,5 +84,4 @@ command(rffrfflfrff);
 function travelLog(rover) {
   var travelLog = [];
   travelLog.push([rover.x,rover.y]);
-  console.log(travelLog);}
 travelLog(rover);
